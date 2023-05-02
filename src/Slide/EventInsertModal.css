@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ----------------------------------------------------------------------------------- */
+
+/* 팝업 스타일 */
+.modal {
+    width: 550px;
+    height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    z-index: 2;
+}
+
+.modal-backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+}
+
+/* 모달 전체  */
+.modal .modalContent {
+    width: 550px;
+    height: 250px;
+    padding: 40px 60px;
+}
+
+.modal .modalContent input {
+    border: none;
+    font-family: 'omyu_pretty';
+    font-size: 17px;
+}
+
+/* 모달 close */
+.modal .close {
+    float: right;
+    margin: 20px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+/* 이벤트 이름 box  */
+.modal .modalContent .eventNameBox {
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    position: relative;
+}
+
+.modal .modalContent .eventName {
+    margin-left: 40px;
+    width: 85%;
+}
+
+#eventName:focus {
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #0096EB;
+}
+
+.modal .modalContent input::placeholder {
+    color: #A7A7A7;
+    font-size: 16px;
+}
+
+/* 컬러 선택 동그라미 */
+.colorBox {
+    position: absolute;
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+/* 컬러피커박스 */
+.twitter-picker {
+    width: 540px !important;
+    display: inline-block;
+    padding: 5px;
+    background: rgb(255, 255, 255);
+    border: 0px solid rgba(0, 0, 0, 0.25) !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 8px 3px !important;
+    border-radius: 4px;
+    position: absolute;
+    top: 13px;
+    left: -10px;
+}
+
+/* 달력 */
+.modal .modalContent .DatetimeBox {
+    font-size: 18px;
+    width: 110%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.Datetime {
+    display: inline-block;
+}
+
+.Datetime .cn {
+    display: inline-block;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#eventStartDate,
+#eventEndDate {
+    margin-top: 5px;
+    padding: 3px;
+    vertical-align: super;
+}
+
+#eventStartDate:focus,
+#eventEndDate:focus {
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #0096EB;
+}
+
+.modal .modalContent .DatetimeBox .dateImg {
+    float: left;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.modal input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 1);
+    float: left;
+    border: none;
+    background: no-repeat;
+    background-image: url("expand_more_FILL0_wght400_GRAD0_opsz48.png");
+    margin-top: 10px;
+    background-size: contain;
+    outline: none;
+    height: 20px;
+    cursor: pointer;
+}
+
+.modal input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+    background-color: #D7F1FA;
+    border-radius: 100%;
+    height: 20px;
+    background-image: url("expand_more_FILL0_wght400_GRAD0_opsz48.png");
+    margin-top: 10px;
+    background-size: contain;
+    outline: none;
+    cursor: pointer;
+}
+
+/* 하루종일 box */
+.modal .modalContent .allDay {
+    font-family: 'omyu_pretty';
+    height: 50px;
+    line-height: 50px;
+    font-size: 17px;
+}
+
+.modal .modalContent .allDay .allDayImg {
+    float: left;
+    font-size: 22px;
+    margin-top: 5px;
+    margin-right: 18px;
+}
+
+/* 일정 추가 */
+.modal .submitButton {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.modal .udbutton {
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.modal #okbutton {
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    font-family: 'omyu_pretty';
+    background-color: #0096EB;
+    color: white;
+    font-size: 17px;
+    border-radius: 50px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.modal #debutton {
+    display: inline-block;
+    border: 3px solid #0096EB;
+    outline: none;
+    margin-right: 15px;
+    margin-left: 40px;
+    font-family: 'omyu_pretty';
+    color: #0096EB;
+    background-color: white;
+    font-size: 17px;
+    border-radius: 50px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+}

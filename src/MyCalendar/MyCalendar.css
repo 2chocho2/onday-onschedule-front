@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { box-sizing: border-box; }
+/* ----------------------------------------------------------------------------------- */
+
+/* 달력 */
+.calendar-box {
+    font-family: 'omyu_pretty';
+    background-color: #ffffff;
+    display: inline-block;
+    width: 75%;
+    height: 100vh;
+    padding: 0px 90px;
+    position: relative;
+}
+
+/* 월, 년도 */
+.fc .fc-toolbar-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    /* padding-bottom: 10px; */
+    color: white;
+    align-items: center;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 20px;
+    width: 100%;
+    line-height: 50px;
+    border-radius: 15px;
+    background-color: #0096EB;
+}
+
+.fc-day-sun a {
+    color: red;
+}
+  
+/* 토요일 날짜: 파란색 */
+.fc-day-sat a {
+    color: blue;
+}
+
+/* 투데이, 이전 다음달 버튼 */
+.fc .fc-button {
+    border: none;
+    outline: none;
+    background-color: #0096EB;
+    font-size: 25px;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 0.5em;
+    transition: all .1s ease;
+    padding: 0px 20px 50px;
+}
+
+.fc .fc-button:hover {
+    background-color: #0096EB;
+    color: #005DCB;
+}
+
+/* 캘린더 그리드 */
+.fc .fc-scrollgrid-liquid {
+    border-collapse: collapse;
+    border: none;
+}
+
+.fc-theme-standard th {
+    background-color: white;
+    height: 30px;
+    border: none;
+    /* line-height: 30px; */
+}
+
+.fc-daygrid-day-frame{
+    border: 0.5px solid #D7F1FA;
+}
+
+.fc-theme-standard td {
+    background-color: white;
+    border: none;
+}
+
+.fc-icon-chevron-left {
+    align-items: center;
+    vertical-align: middle;
+}
+
+.fc-event-title-container {
+    cursor: pointer;
+} 
+
+/* 풀캘린더 */
+:root {
+    --fc-small-font-size: .85em;
+    --fc-event-resizer-thickness: 100%;
+    --fc-event-resizer-dot-total-width: 100%;
+    --fc-event-resizer-dot-border-width: none;
+    --fc-bg-event-opacity: 1;
+    --fc-today-bg-color: rgba(255, 220, 40, 0.15);
+}
+
