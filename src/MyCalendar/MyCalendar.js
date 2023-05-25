@@ -55,7 +55,7 @@ function MyCalendar() {
   }, []);
 
   useEffect(() => {
-    const newEvents = data.map(({ eventId, eventName, eventColor, startDate, endDate, allDay }) => {
+    const newEvents = data && data.map(({ eventId, eventName, eventColor, startDate, endDate, allDay }) => {
       const start = new Date(startDate);
       const end = new Date(endDate);
       return {

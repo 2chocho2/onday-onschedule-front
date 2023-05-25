@@ -67,9 +67,10 @@ function EventUpdateModal(props) {
         axios.put(`http://${process.env.REACT_APP_IP}:${process.env.REACT_APP_PORT}/ondayschedule/eventdelete/${props.eventId}`)
             Swal.fire({
                 text: "일정이 삭제되었습니다! (◍•ᴗ•◍)❤",
-                confirmButtonColor: "#0096EB"
+                showConfirmButton: false,
+                timer: 800
             })
-            .then(function(){
+            .then(() => {
                 window.location.replace("/");
             })
             .catch(error => {

@@ -55,8 +55,8 @@ function TodoList() {
 
     return (
         <>
-            {todoList && todoList.map(todo => (
-                <div className="TodoList">
+            {todoList && todoList.map((todo, index) => (
+                <div className="TodoList" key={index}>
                     {todo.id}
                     <div className='TodoContainer'>
                         <div className='Todo-box'></div>

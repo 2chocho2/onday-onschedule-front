@@ -21,7 +21,6 @@ function EventInsert() {
     setShowModal(true);
   };
 
-
   return (
     <>
       <form className="Event-title" onClick={handleAddEvent}>
