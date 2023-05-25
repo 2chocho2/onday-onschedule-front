@@ -33,31 +33,30 @@
 }
 
 .TodoInsert input::placeholder {
-    color: #D7F1FA;
+    color: #a8dfff;
     font-family: 'omyu_pretty';
 }
 
 /* Todo 버튼 */
 .todosubmit {
     display: inline;
-    margin-bottom: 5px;
-    background: #D7F1FA;
+    background-color: transparent;
     outline: none;
     border: none;
     color: #0096EB;
     border-radius: 5px;
-    height: 30px;
-    line-height: 28px;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
     cursor: pointer;
-    /* background 속성을 0.1초에 걸처 서서히 변경 */
-    transition: 0.1s background ease-in;
+    transition: all .5s ease-in;
 }
 .todosubmitBtn{
-    width: 20px;
-    height: 20px;
+    height: 28px;
+    width: 28px;
     vertical-align: middle;
 }
 
-.button:hover {
-    background-color: #adb5bd;
+.todosubmitBtn:hover {
+    color: rgb(255, 184, 184);
 }

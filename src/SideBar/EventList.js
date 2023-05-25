@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import './SlideTemplate.css';
+import './SideTemplate.css';
 import moment from "moment-timezone";
 import EventUpdateModal from "./EventUpdateModal";
-import { AiOutlineDash } from "react-icons/ai";
 import { FaCircle } from "react-icons/fa";
 
 function EventList() {
@@ -14,12 +13,14 @@ function EventList() {
     const [eventColor, setEventColor] = useState(''); 
     const handleModalEventToggle = () => {
         setShowModalUpdate(prev => !prev);
+        setEventColor('#03a9f4');
     }
 
     //이벤트 클릭시 EventUpdateModal 팝업 생성
     const handleClick = (eventId) => {
         setShowModalUpdate(true);
         setEventId(eventId);
+        setEventColor(datas.backgroundColor);
     };
     // endDate가 오늘날짜와 같거나 큰 이벤트의 리스트 조회
     useEffect(() => {
@@ -37,9 +38,9 @@ function EventList() {
                     <div className="EventItem">
                         <button className="detail" onClick={() => handleClick(event.eventId)}>
                             <FaCircle className="Circle" style={{ color: event.eventColor }} />
-                            <p className="eventName">{event.eventName}</p><br />
+                            <p className="eventName">{event.eventName}</p>        
                         </button>
-                        <p className="date">{moment(event.startDate).format("YYYY-MM-DD")} ~ {moment(event.endDate).format("YYYY-MM-DD")}</p><br />
+                        <p className="date">{moment(event.startDate).format("YYYY-MM-DD")} ~ {moment(event.endDate).format("YYYY-MM-DD")}</p>
                     </div>
                 </>
             ))}

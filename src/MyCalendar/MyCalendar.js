@@ -5,10 +5,9 @@ import './MyCalendar.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import interactionPlugin from '@fullcalendar/interaction'
-import EventInsertModal from '../Slide/EventInsertModal';
 import moment from 'moment';
-import EventUpdateModal from '../Slide/EventUpdateModal';
-
+import EventInsertModal from '../SideBar/EventInsertModal';
+import EventUpdateModal from '../SideBar/EventUpdateModal';
 
 function MyCalendar() {
 
@@ -38,7 +37,6 @@ function MyCalendar() {
   }
 
   const handlerEventClick = (info) => {
-    console.log(info.event.extendedProps.eventIdx);
     setEventId(info.event.extendedProps.eventIdx);
     setEventName(info.event.title);
     setStartDate(info.event.start);
@@ -84,6 +82,8 @@ function MyCalendar() {
             googleCalendarApiKey="AIzaSyBIRZ-O0O6HeoQIY1s2QnuvdBjvseJqzwI"
             selectable={true}
             displayEventTime={false}
+            // views={timeGri}
+            dayMaxEventRows= {4}
             eventSources={[
               {
                 googleCalendarId: 'ko.south_korea#holiday@group.v.calendar.google.com',
@@ -102,7 +102,7 @@ function MyCalendar() {
               end: 'next'
             }}
           
-            height={"850px"}
+            height={"842px"}
             dayCellContent= { function(arg) {
               return arg.dayNumberText.replace("일","");
             }}
@@ -122,8 +122,7 @@ function MyCalendar() {
       {/* 이벤트 클릭 시 해당 날짜의 이벤트 일정 수정 모달 팝업 생성 */}
         {showModalUpdate && (
           <EventUpdateModal
-            eventId={eventId}
-            setEventId={setEventId}
+            eventId={eventId} setEventId={setEventId}
             showModalUpdate={showModalUpdate} setShowModalUpdate={setShowModalUpdate}
             eventColor={eventColor} setEventColor={setEventColor}
             handleModalEventToggle={handleModalEventToggle}

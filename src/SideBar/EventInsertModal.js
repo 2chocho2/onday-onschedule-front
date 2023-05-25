@@ -7,7 +7,8 @@ import ColorPicker from './ColorPicker';
 import { MdCalendarToday } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
 import { AiOutlineClose } from "react-icons/ai";
-
+import { GoDash } from "react-icons/go";
+import Swal from "sweetalert2";
 
 function EventInsertModal(props) {
   const [eventName, setEventName] = useState('');
@@ -38,12 +39,15 @@ function EventInsertModal(props) {
       eventColor: props.eventColor,
       allDay: allDay
     })
-      .then(() => {
-        alert(`새로운 이벤트가 등록되었습니다.`);
-        window.location.replace(`/`);
+      Swal.fire({
+        text: "일정 등록이 완료되었습니다! (◍•ᴗ•◍)❤",
+        confirmButtonColor:"#0096EB"
+      })
+      .then(function(){
+        window.location.replace("/");                
       })
       .catch((error) => {
-        alert(`이벤트 등록에 실패했습니다. (${error.message})`);
+        Swal.fire(`일정 등록에 실패했습니다... ‧₊˚(✘﹏✘) (${error.message})`);
         return;
       });
   };
@@ -68,11 +72,11 @@ function EventInsertModal(props) {
             <label id="dateSelect" htmlFor="eventStartDate">
               <input type="datetime-local" id="eventStartDate" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
             </label>
-            <div className='cn'>~</div>
+            <span className='cn'><GoDash /></span>
             <label htmlFor="eventEndDate">
               {allDay ? (
                 <><input type="datetime-local" id="eventEndDate" value={moment(startDate).format("YYYY-MM-DDT23:59")} readOnly /></>)
-                : <><input type="datetime-local" id="eventEndDate" min={startDate} onChange={(e) => setEndDate(e.target.value)} /><br /></>
+                : <><input type="datetime-local" id="eventEndDate" min={startDate} onChange={(e) => setEndDate(e.target.value)} /></>
               }
             </label>
           </div>

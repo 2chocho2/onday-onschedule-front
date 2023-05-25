@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import './TodoListItem.css';
-import { FaCheckCircle, FaRegCircle, FaPen } from "react-icons/fa";
-import { AiOutlineClose } from "react-icons/ai";
+import { FaCheckCircle, FaRegCircle } from "react-icons/fa";
 import axios from 'axios';
-import cn from 'classnames';
 import TodoUpdate from './TodoUpdate';
 
 function TodoList() {
@@ -58,23 +56,21 @@ function TodoList() {
     return (
         <>
             {todoList && todoList.map(todo => (
-                <>
-                    <div className="TodoList">
-                        {todo.id}
-                        <div className='TodoContainer'>
-                            <div className='Todo-box'></div>
-                            <div className="TodoListItem">
-                                <div className='checkBox'>
-                                    {todo.todoComplete == true ?
-                                        <FaCheckCircle className='checkBoxbutton' onClick={handlerUncheck(todo.todoId)} />
-                                        : <FaRegCircle className='checkBoxbutton' onClick={handlerCheck(todo.todoId)} />}
-                                </div>
-                                {/* TodoUpdate는 TodoList에서 리스트 형태로 불러온 todoName을 상태변수로 이용해야 하기 때문에 TodoList.js 와 분리 */}
-                                <TodoUpdate todoName={todo.todoName} todoId={todo.todoId}></TodoUpdate>
+                <div className="TodoList">
+                    {todo.id}
+                    <div className='TodoContainer'>
+                        <div className='Todo-box'></div>
+                        <div className="TodoListItem">
+                            <div className='checkBox'>
+                                {todo.todoComplete == true ?
+                                    <FaCheckCircle className='checkBoxbutton' onClick={handlerUncheck(todo.todoId)} />
+                                    : <FaRegCircle className='checkBoxbutton' onClick={handlerCheck(todo.todoId)} />}
                             </div>
+                            {/* TodoUpdate는 TodoList에서 리스트 형태로 불러온 todoName을 상태변수로 이용해야 하기 때문에 TodoList.js 와 분리 */}
+                            <TodoUpdate todoName={todo.todoName} todoId={todo.todoId}></TodoUpdate>
                         </div>
                     </div>
-                </>
+                </div>
             ))}
         </>
     );

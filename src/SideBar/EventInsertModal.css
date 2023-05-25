@@ -14,7 +14,7 @@
 /* 팝업 스타일 */
 .modal {
     width: 550px;
-    height: 250px;
+    /* height: 250px; */
     border-radius: 10px;
     position: absolute;
     top: 50%;
@@ -35,10 +35,16 @@
     display: block;
 }
 
+/* Swal 모달 폰트  */
+.swal2-html-container,
+.swal2-styled.swal2-confirm {
+    font-family: 'omyu_pretty';
+}
+
 /* 모달 전체  */
 .modal .modalContent {
     width: 550px;
-    height: 250px;
+    /* height: 250px; */
     padding: 40px 60px;
 }
 
@@ -66,8 +72,15 @@
 }
 
 .modal .modalContent .eventName {
+    margin: 0px;
     margin-left: 40px;
     width: 85%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #eventName:focus {
@@ -84,8 +97,12 @@
 /* 컬러 선택 동그라미 */
 .colorBox {
     position: absolute;
-    margin-top: 5px;
+    top: 2px;
     font-size: 22px;
+}
+
+.Circle {
+    cursor: pointer;
 }
 
 /* 컬러피커박스 */
@@ -98,7 +115,6 @@
     box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 8px 3px !important;
     border-radius: 4px;
     position: absolute;
-    top: 13px;
     left: -10px;
 }
 
@@ -112,19 +128,21 @@
 
 .Datetime {
     display: inline-block;
+    height: 100%;
 }
 
 .Datetime .cn {
-    display: inline-block;
-    padding: 5px;
+    padding-right: 5px;
     font-weight: bold;
+    color: #0096EB;
 }
 
 #eventStartDate,
 #eventEndDate {
-    margin-top: 5px;
     padding: 3px;
-    vertical-align: super;
+    vertical-align: top;
+    height: 50px;
+    border-bottom: 3px solid transparent;
 }
 
 #eventStartDate:focus,
@@ -136,35 +154,36 @@
 
 .modal .modalContent .DatetimeBox .dateImg {
     float: left;
+    vertical-align: middle;
     font-size: 20px;
     margin-right: 20px;
 }
 
 .modal input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-    color: rgba(0, 0, 0, 1);
     float: left;
-    border: none;
     background: no-repeat;
     background-image: url("expand_more_FILL0_wght400_GRAD0_opsz48.png");
-    margin-top: 10px;
+    background-position: center;
     background-size: contain;
-    outline: none;
-    height: 20px;
     cursor: pointer;
 }
 
 .modal input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
     background-color: #D7F1FA;
-    border-radius: 100%;
-    height: 20px;
-    background-image: url("expand_more_FILL0_wght400_GRAD0_opsz48.png");
-    margin-top: 10px;
-    background-size: contain;
-    outline: none;
+    border-radius: 50%;
     cursor: pointer;
 }
 
 /* 하루종일 box */
+.form-check-label {
+    vertical-align: middle;
+}
+
+.allDayName {
+    height: 50px;
+    /* background-color: rgb(49, 41, 41); */
+}
+
 .modal .modalContent .allDay {
     font-family: 'omyu_pretty';
     height: 50px;
@@ -175,8 +194,15 @@
 .modal .modalContent .allDay .allDayImg {
     float: left;
     font-size: 22px;
-    margin-top: 5px;
     margin-right: 18px;
+}
+.modal .modalContent .allDay .allDayImg svg {
+    vertical-align: middle;
+}
+.form-check-input {
+    vertical-align: middle;
+    margin-left: 8px;
+    cursor: pointer;
 }
 
 /* 일정 추가 */
@@ -186,39 +212,54 @@
 }
 
 .modal .udbutton {
-    height: 50px;
-    line-height: 50px;
-    width: 100%;
-    position: relative;
+    /* display: inline-block; */
+    /* border: 1px solid red; */
+    width: 300px;
+    margin: auto;
+    margin-top: 15px;
     text-align: center;
 }
 
-.modal #okbutton {
-    border: none;
-    outline: none;
-    margin-right: 10px;
-    font-family: 'omyu_pretty';
-    background-color: #0096EB;
-    color: white;
-    font-size: 17px;
-    border-radius: 50px;
+.modal #okbutton, .modal #debutton {
+    padding: 5px 0px;
     width: 120px;
-    height: 30px;
+    margin: 0px 15px;
+    font-family: 'omyu_pretty';
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 50px;
     cursor: pointer;
 }
 
+.modal #okbutton {
+    background-color: #0096EB;
+    border: 2px solid #0096EB;
+    color: white;
+} 
+.modal #okbutton:hover, .modal #debutton:hover{
+    box-shadow: 0px 0px 5px 2px #0096EB;
+}
+.modal #debutton { 
+    background-color: white;
+    border: 2px solid #0096EB;
+    color: #0096EB;
+}
+.modal #debutton:hover {
+    background-color: #dff3ff;
+    color: #0096EB;
+}
+
+/* 
 .modal #debutton {
     display: inline-block;
+    border-radius: 50px;
     border: 3px solid #0096EB;
-    outline: none;
-    margin-right: 15px;
-    margin-left: 40px;
+    background-color: white;
     font-family: 'omyu_pretty';
     color: #0096EB;
-    background-color: white;
     font-size: 17px;
-    border-radius: 50px;
     width: 120px;
+    padding: 5px 0px;
     height: 30px;
     cursor: pointer;
-}
+} */

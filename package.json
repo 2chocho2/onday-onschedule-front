@@ -1,5 +1,5 @@
 {
-  "name": "onday-schedule",
+  "name": "onday-schedule-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,8 +17,12 @@
     "axios": "^1.3.5",
     "classnames": "^2.3.2",
     "datetime": "^0.0.3",
+    "highcharts": "^11.0.1",
+    "highcharts-react-official": "^3.2.0",
+    "install": "^0.13.0",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
+    "npm": "^9.6.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-color": "^2.19.3",
@@ -29,6 +33,7 @@
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
     "styled-reset": "^4.4.6",
+    "sweetalert2": "^11.7.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

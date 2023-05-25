@@ -1,18 +1,15 @@
 import Title from '../Title/Title';
 import EventInsert from './EventInsert';
-import './SlideTemplate.css';
+import './SideTemplate.css';
 import TodoInsert from './TodoInsert';
 import TodoList from './TodoList';
 import EventList from './EventList';
 
-function SlideTemplate() {
+function SideTemplate() {
 
     return (
         <>
-            <div className='top'>
-                <Title />
-            </div>
-            <div className="Slide">
+            <div className="Side">
                 <div className='Event'>
                     <EventInsert />
                     <div className="EventList">
@@ -20,7 +17,7 @@ function SlideTemplate() {
                     </div>
                 </div>
                 <div className='Todo'>
-                    <div className="todo-title"><p>TODO</p></div>
+                    <div className="todo-title">오늘의 TODO</div>
                     <div className='todoInsert'>
                         <TodoInsert />
                     </div>
@@ -33,4 +30,4 @@ function SlideTemplate() {
     )
 }
 
-export default SlideTemplate;
+export default SideTemplate;

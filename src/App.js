@@ -2,24 +2,22 @@ import './App.css';
 import MyCalendar from './MyCalendar/MyCalendar';
 import * as React from 'react'
 import { Reset } from 'styled-reset'
-import EventInsert from './Slide/EventInsert';
-import SlideTemplate from './Slide/SlideTemplate';
-
+import { Route } from 'react-router-dom';
+import SideTemplate from './SideBar/SideTemplate';
 
 function App() {
 
   return (
-    <div className="App">
-        <React.Fragment>
-          <Reset />
-          <SlideTemplate />
-          {/* <TodoTemplate>
-              <TodoInsert />
-              <TodoList todos={todos}/>
-          </TodoTemplate> */}
-          <MyCalendar />
-        </React.Fragment>
-    </div>
+    <>
+      <React.Fragment>
+        <Reset />
+      </React.Fragment>
+      
+      <div id='onday-container'>
+        <Route path="/" render={(props) => <SideTemplate {...props} />} exact={true} />
+        <Route path="/" render={(props) => <MyCalendar {...props} />} exact={true} />
+      </div>
+    </>
   );
 }
 

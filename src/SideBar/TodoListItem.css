@@ -65,10 +65,12 @@
 .TodoListItem #todoName {
     border: none;
     background-color: transparent;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
     font-size: 20px;
     float: left;
     width: 70%;
-    height: 26px;
+    height: 30px;
     margin-left: 10px;
     font-family: 'KNPSKkomi-Regular00';
 }
@@ -76,13 +78,13 @@
 .TodoListItem #todoName:focus {
     border: none;
     outline: none;
+    border-top: 3px solid transparent;
     border-bottom: 3px solid #0096EB;
 }
 
 /* 버튼 */
 .todo-button {
     float: right;
-    
 }
 .TodoListItem .editButton {
     font-size: 1rem;
